@@ -52,7 +52,7 @@ const sideBarLinks = [
 
 const DashboardSidebar = () => {
   return (
-    <div className='flex-shrink-0 w-full md:w-[76px] flex flex-col rounded-3xl bg-white shadow-[10px_10px_20px_rgba(218,213,213,0.15)] px-[14px] py-10'>
+    <div className='flex-shrink-0 -ml-[14px] w-full md:w-[76px] flex flex-col rounded-3xl bg-white shadow-[10px_10px_20px_rgba(218,213,213,0.15)] px-[14px] py-10'>
       {sideBarLinks.map((link) => (
         <NavLink
           to={link.url}
