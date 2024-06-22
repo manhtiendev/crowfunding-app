@@ -21,11 +21,11 @@ const CampaignFeature = () => {
         <div className='w-full rounded-full bg-[#EFEFEF] h-[5px] mb-6'>
           <div className='w-2/4 h-full rounded-full bg-primary'></div>
         </div>
-        <flex className='flex items-start justify-between gap-x-5'>
+        <div className='flex items-start justify-between gap-x-5'>
           <CampMeta size='big'></CampMeta>
           <CampMeta amount='173' text='Total backers' size='big'></CampMeta>
           <CampMeta amount='30' text='Days left' size='big'></CampMeta>
-        </flex>
+        </div>
       </div>
     </div>
   );
