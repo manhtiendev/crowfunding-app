@@ -14,7 +14,9 @@ const DashboardTopbar = () => {
       </div>
       <div className='flex items-center justify-end flex-1 gap-x-10'>
         <DashboardFund></DashboardFund>
-        <Button className='bg-secondary px-7'>Start a campain</Button>
+        <Button type='button' className='bg-secondary px-7'>
+          Start a campain
+        </Button>
         <img src='/avatar.png' alt='avatar' className='object-cover rounded-full h-14 w-14' />
       </div>
     </div>
