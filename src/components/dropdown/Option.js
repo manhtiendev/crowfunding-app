@@ -1,5 +1,5 @@
-import React from "react";
-import { useDropdown } from "./dropdown-context";
+import React from 'react';
+import { useDropdown } from './dropdown-context';
 
 const Option = (props) => {
   const { onClick } = props;
@@ -10,7 +10,7 @@ const Option = (props) => {
   };
   return (
     <div
-      className="py-4 px-5 cursor-pointer flex items-center justify-between hover:text-primary transition-all text-sm"
+      className='flex items-center justify-between px-5 py-4 text-sm transition-all cursor-pointer hover:text-primary'
       onClick={handleClick}
     >
       {props.children}
