@@ -7,6 +7,10 @@ import CampMeta from './parts/CampMeta';
 import { Button } from 'components/button';
 import CampViewAuthor from './parts/CampViewAuthor';
 import { defaultImage1 } from 'constants/global';
+import CampaignSupport from './CampaignSupport';
+import CampaignPerk from './CampaignPerk';
+import CampaignGrid from './CampaignGrid';
+import CampaignItem from './CampaignItem';
 
 const CampaignView = () => {
   return (
@@ -57,6 +61,31 @@ const CampaignView = () => {
           </Button>
         </div>
       </div>
+      <div className='flex items-center justify-between mt-[100px] bg-white p-5 border-b border-b-slate-100 mb-6'>
+        <div className='flex items-center text-sm font-medium text-text3 gap-x-14'>
+          <span className='cursor-pointer text-secondary'>Campaign</span>
+        </div>
+        <Button kind='primary'>Back this project</Button>
+      </div>
+      <div className='grid grid-cols-[1.3fr,1fr] mb-[70px] gap-x-[124px]'>
+        <div></div>
+        <div>
+          <CampaignSupport></CampaignSupport>
+          <div className='mb-[60px]'></div>
+          <div className='flex flex-col gap-y-[30px]'>
+            <CampaignPerk></CampaignPerk>
+            <CampaignPerk></CampaignPerk>
+            <CampaignPerk></CampaignPerk>
+          </div>
+        </div>
+      </div>
+      <h2 className='mb-10 text-xl font-semibold'>You also may be interested in</h2>
+      <CampaignGrid>
+        <CampaignItem></CampaignItem>
+        <CampaignItem></CampaignItem>
+        <CampaignItem></CampaignItem>
+        <CampaignItem></CampaignItem>
+      </CampaignGrid>
     </Fragment>
   );
 };
