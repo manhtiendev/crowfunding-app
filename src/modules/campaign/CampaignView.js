@@ -64,11 +64,18 @@ const CampaignView = () => {
       <div className='flex items-center justify-between mt-[100px] bg-white p-5 border-b border-b-slate-100 mb-6'>
         <div className='flex items-center text-sm font-medium text-text3 gap-x-14'>
           <span className='cursor-pointer text-secondary'>Campaign</span>
+          <span className='cursor-pointer'>Risks</span>
+          <span className='cursor-pointer'>FAQ</span>
+          <span className='cursor-pointer'>Update</span>
+          <span className='cursor-pointer'>Comments</span>
         </div>
         <Button kind='primary'>Back this project</Button>
       </div>
       <div className='grid grid-cols-[1.3fr,1fr] mb-[70px] gap-x-[124px]'>
-        <div></div>
+        <div>
+          <h2 className='mb-5 text-lg font-semibold uppercase'>Story</h2>
+          <div className='w-full bg-white'></div>
+        </div>
         <div>
           <CampaignSupport></CampaignSupport>
           <div className='mb-[60px]'></div>
