@@ -1,3 +1,7 @@
-const { combineReducers } = require("@reduxjs/toolkit");
+import authReducer from './auth/auth-slice';
 
-export const reducer = combineReducers({});
+const { combineReducers } = require('@reduxjs/toolkit');
+
+export const reducer = combineReducers({
+  auth: authReducer,
+});

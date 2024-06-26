@@ -1,100 +1,20 @@
 {
-  "user": [],
-  "categories": [],
-  "campaigns": [
+  "users": [
     {
-      "title": "Powered Kits Learning Boxes",
-      "short-description": "Fun, durable and reusable boxes with eco-friendly options.",
-      "goal": "100",
-      "amount": "200",
-      "prefilled": "10,20",
-      "video": "https://www.youtube.com/watch?v=bERs-GlCyjo",
-      "category": "education",
-      "country": "Vietnam",
-      "content": "<p><span style=\"color: rgb(128, 129, 145);\">Fun, durable and reusable boxes with eco-friendly options.</span></p>",
-      "startDate": "2024-06-25T04:55:42.807Z",
-      "endDate": "2024-06-27T17:00:00.000Z",
-      "id": 1
+      "id": 1,
+      "name": "Manh Tien",
+      "password": "$2b$10$2CyqzdYNFqPx.K3K7mKnGu.iwkdBDIP4PPDN5Gndp49ZB94X0R..O",
+      "email": "manhtien12345@gmail.com",
+      "refreshToken": null
     },
     {
-      "title": "Powered Kits Learning Boxes",
-      "short-description": "Fun, durable and reusable boxes with eco-friendly options.",
-      "goal": "100",
-      "amount": "200",
-      "prefilled": "10,20",
-      "video": "https://www.youtube.com/watch?v=bERs-GlCyjo",
-      "category": "architecture",
-      "country": "Peru",
-      "content": "<p>Fun, durable and reusable boxes with eco-friendly options.</p>",
-      "startDate": "2024-06-24T17:00:00.000Z",
-      "endDate": "2024-06-29T17:00:00.000Z",
-      "id": 2
-    },
-    {
-      "title": "",
-      "short-description": "",
-      "goal": "",
-      "amount": "",
-      "prefilled": "",
-      "video": "",
-      "feature_image": "https://picsum.photos/200",
-      "content": "",
-      "startDate": "2024-06-25T06:01:59.602Z",
-      "endDate": "2024-06-25T06:01:59.602Z",
-      "id": 3
-    },
-    {
-      "title": "",
-      "short-description": "",
-      "goal": "",
-      "amount": "",
-      "prefilled": "",
-      "video": "",
-      "content": "",
-      "startDate": "2024-06-25T06:19:45.462Z",
-      "endDate": "2024-06-25T06:19:45.462Z",
-      "id": 4
-    },
-    {
-      "title": "",
-      "short-description": "",
-      "goal": "",
-      "amount": "",
-      "prefilled": "",
-      "video": "",
-      "content": "",
-      "startDate": "",
-      "endDate": "",
-      "id": 5
-    },
-    {
-      "title": "",
-      "short-description": "",
-      "goal": "",
-      "amount": "",
-      "prefilled": "",
-      "video": "",
-      "content": "",
-      "startDate": "2024-06-25T06:24:32.859Z",
-      "endDate": "2024-06-25T06:24:32.859Z",
-      "id": 6
-    },
-    {
-      "title": "",
-      "short-description": "",
-      "goal": "",
-      "amount": "",
-      "prefilled": "",
-      "video": "",
-      "featured_image": {
-        "medium": "https://i.ibb.co/pyNpfvM/pexels-christian-heitz-285904-842711.jpg",
-        "thumb": "https://i.ibb.co/m8d79C2/pexels-christian-heitz-285904-842711.jpg",
-        "url": "https://i.ibb.co/zJCwXhB/pexels-christian-heitz-285904-842711.jpg"
-      },
-      "content": "",
-      "startDate": "2024-06-25T06:42:41.248Z",
-      "endDate": "2024-06-25T06:42:41.248Z",
-      "id": 7
+      "id": 2,
+      "name": "test",
+      "password": "$2b$10$0p20IBR6VwYAMTGx8VKuu.O0BlvDmZJHCoiIO9jr4DRx93hxduObm",
+      "email": "test@gmail.com",
+      "refreshToken": null
     }
-  ]
+  ],
+  "categories": [],
+  "campaigns": []
 }

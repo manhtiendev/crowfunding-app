@@ -10,6 +10,8 @@ import { Input } from 'components/input';
 import { IconEyeToggle } from 'components/icons';
 import { Checkbox } from 'components/checkbox';
 import { Button, ButtonGoogle } from 'components/button';
+import { useDispatch } from 'react-redux';
+import { authRegister } from 'store/auth/auth-slice';
 
 const schema = yup.object({
   name: yup.string().required('This field is required'),
@@ -23,14 +25,19 @@ const SignUpPage = () => {
 
   const {
     handleSubmit,
+    reset,
     control,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
     mode: 'onSubmit',
   });
-  const handleSignUp = (values) => {
-    console.log('🚀 ~ handleSignUp ~ values:', values);
+
+  const dispatch = useDispatch();
+
+  const handleSignUp = async (values) => {
+    dispatch(authRegister(values));
+    reset({});
   };
 
   return (
