@@ -44,7 +44,7 @@ const SignUpPage = () => {
     <LayoutAuthentication heading='Sign Up'>
       <p className='mb-6 text-xs font-normal text-center lg:mb-8 lg:text-sm text-text3'>
         Already have an account?{' '}
-        <Link to='/sign-in' className='font-medium underline text-primary'>
+        <Link to='/login' className='font-medium underline text-primary'>
           Sign in
         </Link>
       </p>

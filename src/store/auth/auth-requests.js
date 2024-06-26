@@ -1,5 +1,9 @@
 const { default: axios } = require('api/axios');
 
-export const requestAuthRegister = async (data) => {
-  return await axios.post('/auth/register', { ...data });
+export const requestAuthRegister = (data) => {
+  return axios.post('/auth/register', { ...data });
+};
+
+export const requestAuthLogin = (data) => {
+  return axios.post('/auth/login', { ...data });
 };

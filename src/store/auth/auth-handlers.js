@@ -1,6 +1,7 @@
 import { call } from 'redux-saga/effects';
-import { requestAuthRegister } from './auth-requests';
+import { requestAuthLogin, requestAuthRegister } from './auth-requests';
 import { toast } from 'react-toastify';
+import { saveToken } from 'utils/auth';
 
 export default function* handleAuthRegister(action) {
   const { payload } = action;
@@ -13,3 +14,16 @@ export default function* handleAuthRegister(action) {
     console.log(error);
   }
 }
+
+function* handleAuthLogin({ payload }) {
+  try {
+    const res = yield call(requestAuthLogin, payload);
+    if (res.data.accessToken && res.data.refreshToken) {
+      saveToken(res.data.accessToken, res.data.refreshToken);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export { handleAuthLogin };

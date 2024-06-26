@@ -10,6 +10,8 @@ import { Label } from 'components/label';
 import { Input } from 'components/input';
 import { IconEyeToggle } from 'components/icons';
 import { Button, ButtonGoogle } from 'components/button';
+import { useDispatch } from 'react-redux';
+import { authLogin } from 'store/auth/auth-slice';
 
 const schema = yup.object({
   email: yup.string().email('Invalid email address').required('This field is required'),
@@ -28,15 +30,17 @@ const SignInPage = () => {
     mode: 'onSubmit',
   });
 
+  const dispatch = useDispatch();
+
   const handleSignIn = (values) => {
-    console.log('🚀 ~ handleSignIn ~ values:', values);
+    dispatch(authLogin(values));
   };
 
   return (
     <LayoutAuthentication heading='Welcome Back!'>
       <p className='mb-6 text-xs font-normal text-center lg:mb-8 lg:text-sm text-text3'>
         Dont have an account?{' '}
-        <Link to='/sign-up' className='font-medium underline text-primary'>
+        <Link to='/register' className='font-medium underline text-primary'>
           Sign up
         </Link>
       </p>
