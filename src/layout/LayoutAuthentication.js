@@ -1,10 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withErrorBoundary } from 'react-error-boundary';
 import ErrorComponent from '../components/common/ErrorComponent';
+import { useSelector } from 'react-redux';
 
 const LayoutAuthentication = ({ children, heading = '' }) => {
+  const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user && user.email) {
+      navigate('/');
+    }
+  }, [user, navigate]);
+  if (user && user.email) {
+    return null;
+  }
   return (
     <div className='relative w-full min-h-screen p-10 bg-lite dark:bg-darkbg isolate'>
       <img

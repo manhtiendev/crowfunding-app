@@ -11,6 +11,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { authLogOut } from 'store/auth/auth-slice';
+import { v4 } from 'uuid';
 
 const sideBarLinks = [
   {
@@ -60,7 +61,7 @@ const DashboardSidebar = () => {
       {sideBarLinks.map((link) => {
         if (link.url === '/logout') {
           return (
-            <button onClick={() => dispatch(authLogOut())} className={navLinkClass}>
+            <button key={v4()} onClick={() => dispatch(authLogOut())} className={navLinkClass}>
               <span>{link.icon}</span>
               <span className='md:hidden'>{link.title}</span>
             </button>
@@ -69,7 +70,7 @@ const DashboardSidebar = () => {
         return (
           <NavLink
             to={link.url}
-            key={link.title}
+            key={v4()}
             className={({ isActive }) =>
               isActive
                 ? `${navLinkClass} bg-primary text-primary bg-opacity-20`
