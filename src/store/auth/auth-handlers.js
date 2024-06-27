@@ -6,7 +6,7 @@ import {
   requestAuthRegister,
 } from './auth-requests';
 import { toast } from 'react-toastify';
-import { saveToken } from 'utils/auth';
+import { logOut, saveToken } from 'utils/auth';
 import { authUpdateUser } from './auth-slice';
 
 export default function* handleAuthRegister(action) {
@@ -63,11 +63,21 @@ function* handleAuthRefreshToken({ payload }) {
         payload: res.data.accessToken,
       });
     } else {
-      //
+      yield handleAuthLogOut();
     }
   } catch (error) {
     console.log(error);
   }
 }
 
-export { handleAuthLogin, handleAuthFetchMe, handleAuthRefreshToken };
+function* handleAuthLogOut() {
+  yield put(
+    authUpdateUser({
+      user: undefined,
+      accessToken: null,
+    })
+  );
+  logOut();
+}
+
+export { handleAuthLogin, handleAuthFetchMe, handleAuthRefreshToken, handleAuthLogOut };
