@@ -12,8 +12,7 @@ const DashboardPage = () => {
   useEffect(() => {
     async function fetchCampaigns() {
       try {
-        const response = await axiosPrivate.get('/api/campaigns');
-        console.log('🚀 ~ fetchCampaigns ~ response:', response);
+        await axiosPrivate.get('/api/campaigns');
       } catch (error) {
         console.log('🚀 ~ fetchCampaigns ~ error:', error);
       }

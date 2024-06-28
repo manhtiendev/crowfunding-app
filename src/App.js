@@ -7,6 +7,8 @@ import LayoutPayment from 'layout/LayoutPayment';
 import { useDispatch, useSelector } from 'react-redux';
 import { authRefreshToken, authUpdateUser } from 'store/auth/auth-slice';
 import { getToken, logOut } from 'utils/auth';
+import RequiredAuthPage from 'pages/RequiredAuthPage';
+import { permissions } from 'constants/permission';
 
 const SignUpPage = lazy(() => import('./pages/SignUpPage'));
 const SignInPage = lazy(() => import('./pages/SignInPage'));
@@ -16,6 +18,7 @@ const StartCampaignPage = lazy(() => import('./pages/StartCampaignPage'));
 const CheckoutPage = lazy(() => import('./pages/CheckoutPage'));
 const ShippingPage = lazy(() => import('./pages/ShippingPage'));
 const PaymentPage = lazy(() => import('./pages/PaymentPage'));
+const UnauthorizePage = lazy(() => import('./pages/UnauthorizePage'));
 
 // const customStyles = {
 //   content: {},
@@ -47,8 +50,17 @@ function App() {
       <Routes>
         <Route element={<LayoutDashboard></LayoutDashboard>}>
           <Route path='/' element={<DashboardPage></DashboardPage>}></Route>
+          <Route path='/unauthorize' element={<UnauthorizePage></UnauthorizePage>}></Route>
           <Route path='/campaign' element={<CampaignPage></CampaignPage>}></Route>
-          <Route path='/start-campaign' element={<StartCampaignPage></StartCampaignPage>}></Route>
+          <Route
+            element={
+              <RequiredAuthPage
+                allowPermissions={[permissions.campaign.CREATE_CAMPAIGN]}
+              ></RequiredAuthPage>
+            }
+          >
+            <Route path='/start-campaign' element={<StartCampaignPage></StartCampaignPage>}></Route>
+          </Route>
           <Route path='/campaign/:slug' element={<CampaignView></CampaignView>}></Route>
         </Route>
         <Route element={<LayoutPayment></LayoutPayment>}>
